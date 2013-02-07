@@ -1,0 +1,15 @@
+{
+  "name": "Port Mapper",
+  "version": "0.0.1",
+  "description": "Keep track of those pesky ports!",
+  "jam": {
+    "dependencies": {
+      "jquery": null,
+      "lodash": null,
+      "knockout": null,
+      "bootstrap": null,
+      "font-awesome-more": null,
+      "store": null
+    }
+  }
+}

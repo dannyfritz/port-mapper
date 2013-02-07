@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Port Mapper</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <script src="jam/require.js"></script>
+  <script src="scripts/main.js"></script>
+</head>
+<body>
+  <div class="container">
+  <div class="hero-unit">
+    <h1>PORTS</h1>
+    <p>Because your memory sucks at these things.</p>
+  </div>
+  <div class="well">
+    <legend><i class="icon-edit"></i> New Mapping</legend>
+    <form id="input-form" class="form-inline">
+      <span class="control-group" data-bind="isNumber: inputNumber">
+        <input id="input-port" type="text" placeholder="Port #" class="input-mini"
+          data-bind="value: inputNumber" required>
+      </span>
+      <input id="input-name" type="text" placeholder="Application Name"
+        data-bind="value: inputName" required>
+      <button id="input-submit" type="button" class="btn btn-primary"
+        data-bind="click: newPort"><i class="icon-plus icon-white"></i> Add</button>
+    </form>
+  </div>
+  <div class="well">
+    <legend class="row">
+    <div class="span2">PORT #</div>
+    <div class="span3">APPLICATION</div>
+    <div class="span2">ADDED</div>
+    <div class="span2">&nbsp;</div>
+    </legend>
+    <script type="text/html" id="portRow">
+      <div class="row">
+        <div class="span2" data-bind="text: number"></div>
+        <div class="span3" data-bind="text: name"></div>
+        <div class="span2" data-bind="text: $root.parseDate(date)"></div>
+        <div class="span2">
+        <button type="button" class="btn btn-mini" data-bind=""><i class="icon-pencil"></i></button>
+        <button type="button" class="btn btn-danger btn-mini" data-bind="click: $root.removePort"><i class="icon-remove icon-white"></i></button>
+        </div>
+      </div>
+    </script>
+    <!-- ko template: {name: "portRow", foreach: ports} -->
+    <!-- /ko -->
+  </div>
+  </div>
+</body>
+</html>
